@@ -1,5 +1,7 @@
 /* eslint max-len: 0 */
 
+/* eslint max-len: 0 */
+
 import { robogerCountsTo } from '../src/js/core'
 
 test(`mr roboger hands you back your zero`, () => {
