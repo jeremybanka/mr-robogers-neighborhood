@@ -820,7 +820,7 @@ function robogerConsiders(number) {
 
 function robogerCountsTo(finalNumber) {
   const countedNumbers = []
-  for(let currentNumber; currentNumber <= finalNumber; currentNumber++) {
+  for(let currentNumber = 0; currentNumber <= finalNumber; currentNumber++) {
     const robogersThought = robogerConsiders(currentNumber)
     countedNumbers.push(robogersThought)
   }
