@@ -800,7 +800,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (number => number * 2);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (finalNumber => {
+  let countedNumbers = []
+  let currentNumber = 0
+  while(currentNumber <= finalNumber) {
+    countedNumbers.push(currentNumber)
+    currentNumber += 1
+  }
+  return countedNumbers
+});
 
 
 /***/ })
@@ -889,7 +897,7 @@ __webpack_require__.r(__webpack_exports__);
 // LOGIC
 
 
-(0,_core__WEBPACK_IMPORTED_MODULE_2__.default)(1)
+console.log((0,_core__WEBPACK_IMPORTED_MODULE_2__.default)(10))
 
 })();
 

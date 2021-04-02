@@ -2,6 +2,6 @@
 import '../styles/core.scss'
 import '../styles/font-face.scss'
 // LOGIC
-import double from './core'
+import robogerCount from './core'
 
-double(1)
+console.log(robogerCount(10))
