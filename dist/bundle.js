@@ -801,23 +801,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "robogerConsiders": () => (/* binding */ robogerConsiders),
 /* harmony export */   "robogerCountsTo": () => (/* binding */ robogerCountsTo)
 /* harmony export */ });
+/* eslint no-restricted-syntax: 0 */
+
+const ROBOGERS_WEIRD_IDEAS = [
+  { digit: 3, specialPronunciation: `Won't you be my neighbor?` },
+  { digit: 2, specialPronunciation: `Boop!` },
+  { digit: 1, specialPronunciation: `Beep!` },
+]
+
 function robogerConsiders(number) {
-  const numberHolds3 = /3/.test(String(number))
-  const numberHolds2 = /2/.test(String(number))
-  const numberHolds1 = /1/.test(String(number))
-  if (numberHolds3) return `Won't you be my neighbor?`
-  if (numberHolds2) return `Boop!`
-  if (numberHolds1) return `Beep!`
+  for(const { digit, specialPronunciation } of ROBOGERS_WEIRD_IDEAS) {
+    const digitRegExp = new RegExp(digit)
+    const numberContainsDigit = digitRegExp.test(String(number))
+    if(numberContainsDigit) return specialPronunciation
+  }
   return number
 }
 
 function robogerCountsTo(finalNumber) {
-  let countedNumbers = []
-  let currentNumber = 0
-  while(currentNumber <= finalNumber) {
+  const countedNumbers = []
+  for(let currentNumber; currentNumber <= finalNumber; currentNumber++) {
     const robogersThought = robogerConsiders(currentNumber)
     countedNumbers.push(robogersThought)
-    currentNumber += 1
   }
   return countedNumbers
 }
@@ -909,7 +914,7 @@ __webpack_require__.r(__webpack_exports__);
 // LOGIC
 
 
-console.log((0,_core__WEBPACK_IMPORTED_MODULE_2__.default)(10))
+console.log((0,_core__WEBPACK_IMPORTED_MODULE_2__.robogerCountsTo)(10))
 
 })();
 
