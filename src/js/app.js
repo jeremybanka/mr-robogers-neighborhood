@@ -9,6 +9,7 @@ import { robogerCountsTo } from './core'
 $(() => {
   $(`form`).on(`submit`, e => {
     e.preventDefault()
-    console.log(robogerCountsTo(10))
+    const numberToCount = $(`#how-high`).val()
+    console.log(robogerCountsTo(numberToCount))
   })
 })

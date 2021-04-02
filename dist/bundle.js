@@ -11836,7 +11836,8 @@ __webpack_require__.r(__webpack_exports__);
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(() => {
   jquery__WEBPACK_IMPORTED_MODULE_2___default()(`form`).on(`submit`, e => {
     e.preventDefault()
-    console.log((0,_core__WEBPACK_IMPORTED_MODULE_3__.robogerCountsTo)(10))
+    const numberToCount = jquery__WEBPACK_IMPORTED_MODULE_2___default()(`#how-high`).val()
+    console.log((0,_core__WEBPACK_IMPORTED_MODULE_3__.robogerCountsTo)(numberToCount))
   })
 })
 
