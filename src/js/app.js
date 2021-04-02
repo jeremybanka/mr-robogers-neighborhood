@@ -1,7 +1,14 @@
 // STYLE
 import '../styles/core.scss'
 import '../styles/font-face.scss'
+// UI
+import $ from 'jquery'
 // LOGIC
 import { robogerCountsTo } from './core'
 
-console.log(robogerCountsTo(10))
+$(() => {
+  $(`form`).on(`submit`, e => {
+    e.preventDefault()
+    console.log(robogerCountsTo(10))
+  })
+})
