@@ -798,17 +798,20 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "robogerConsiders": () => (/* binding */ robogerConsiders),
+/* harmony export */   "robogerCountsTo": () => (/* binding */ robogerCountsTo)
 /* harmony export */ });
 function robogerConsiders(number) {
   const numberHolds3 = /3/.test(String(number))
-  if (numberHolds3) {
-    return `Won't you be my neighbor?`
-  }
+  const numberHolds2 = /2/.test(String(number))
+  const numberHolds1 = /1/.test(String(number))
+  if (numberHolds3) return `Won't you be my neighbor?`
+  if (numberHolds2) return `Boop!`
+  if (numberHolds1) return `Beep!`
   return number
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (finalNumber => {
+function robogerCountsTo(finalNumber) {
   let countedNumbers = []
   let currentNumber = 0
   while(currentNumber <= finalNumber) {
@@ -817,7 +820,7 @@ function robogerConsiders(number) {
     currentNumber += 1
   }
   return countedNumbers
-});
+}
 
 
 /***/ })
