@@ -1,7 +1,7 @@
-import double from '../src/js/core'
+import robogerCount from '../src/js/core'
 
-test(`let's get cooking`, () => {
-  const input = 1
-  const expected = 2
-  expect(double(input)).toEqual(expected)
+test(`mr roboger hands you back your zero`, () => {
+  const input = 0
+  const expected = [0]
+  expect(robogerCount(input)).toEqual(expected)
 })
