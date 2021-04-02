@@ -10,6 +10,15 @@ $(() => {
   $(`form`).on(`submit`, e => {
     e.preventDefault()
     const numberToCount = $(`#how-high`).val()
-    console.log(robogerCountsTo(numberToCount))
+    const countedNumbers = robogerCountsTo(numberToCount)
+    const $main = $(`main`)
+    const $outputList = $(`<ol/>`).attr(`start`, 0)
+    $main.empty()
+    $main.append($outputList)
+    countedNumbers.forEach(countedNumber => {
+      const $countedNumber = $(`<li/>`).text(countedNumber)
+      $outputList.delay(1000).append($countedNumber)
+    })
+    $outputList.scrollTop($outputList.height() - $main.height())
   })
 })
