@@ -1,0 +1,111 @@
+:root {
+  --tint-light: #fff1;
+  --shade-light: #0001;
+  --shade-heavy: #0005;
+  --color-lavender: #aaaccc;
+  --color-mahogany: #654;
+  --color-mahogany-light: #765;
+  --fg-color: var(--color-mahogany);
+  --bg-color: var(--color-lavender);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-color);
+  * {
+    font-family: Theia;
+    font-weight: 300;
+    font-size: 24px;
+  }
+  header, footer {
+    height: 100px;
+  }
+  header, main, footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 20px);
+  }
+  header {
+    h1 {
+      font-size: 30px;
+      font-weight: 200;
+      margin: 0;
+    }
+    h2 {
+      margin: 0;
+      font-size: 21px;
+      font-weight: 300;
+      color: var(--shade-heavy);
+      cursor: help;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  main { 
+    flex-grow: 1;
+    background: var(--shade-light);
+    mix-blend-mode: multiply;
+    ol {
+      color: white;
+      li { 
+        background: var(--shade-heavy);
+        ~ li {
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  footer {
+    height: 100px;
+    input[type='number'] {
+      margin: 12px;
+      outline: none;
+      border: none;
+      border-bottom: 3px solid var(--shade-heavy);
+      background: none;
+      font-size: 36px;
+      
+    }
+    button {
+      font-family: 'Icon';
+      cursor: pointer;
+      outline: none;
+      flex-shrink: 0;
+      font-size: 30px;
+      font-variation-settings: 'wght' 150;
+      height: 70px;
+      width: 70px;
+      margin: 40px 0;
+      padding: 0;
+      background: var(--fg-color);
+      color: var(--bg-color);
+      border: none;
+      border-radius: 100%;
+      transition-property: transform box-shadow;
+      transition-duration: 100ms;
+      transition-timing-function: ease-out;
+      &:hover, &:focus {
+        transform: scale(1.01);
+        box-shadow: 0 0px 10px 0.5px var(--light-shade);
+        background: var(--color-mahogany-light);
+      }
+      &:active {
+        transition-duration: 10ms;
+        transform: scale(0.99);
+        box-shadow: none;
+        background: var(--fg-color);
+      }
+      &[type='submit']:before {
+        content: 'l';
+      }
+    }
+  }
+}
