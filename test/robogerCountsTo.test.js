@@ -16,7 +16,7 @@ test(`mr roboger refuses to count to ten like a normal person`, () => {
   expect(robogerCountsTo(input)).not.toEqual(expected)
 })
 
-test(`mr roboger tries to count to three, but just goes "0 Beep! Boop! Won't you be my neighbor?"`, () => {
+test(`mr roboger seems like he wants to count to three, but just goes "0 Beep! Boop! Won't you be my neighbor?" instead`, () => {
   const input = 3
   const expected = [0, `Beep!`, `Boop!`, `Won't you be my neighbor?`]
   expect(robogerCountsTo(input)).toEqual(expected)
