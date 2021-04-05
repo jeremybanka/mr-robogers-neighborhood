@@ -7,19 +7,23 @@ const ROBOGERS_WEIRD_IDEAS = [
 ]
 
 export function robogersConsiders(number) {
+  let robogersInterpretation = number
   for(const { digit, specialPronunciation } of ROBOGERS_WEIRD_IDEAS) {
     const digitRegExp = new RegExp(digit)
     const numberContainsDigit = digitRegExp.test(String(number))
-    if(numberContainsDigit) return specialPronunciation
+    if(numberContainsDigit) {
+      robogersInterpretation = specialPronunciation
+      break
+    }
   }
-  return number
+  return robogersInterpretation
 }
 
 export function robogersCountsTo(finalNumber) {
   const countedNumbers = []
   for(let currentNumber = 0; currentNumber <= finalNumber; currentNumber++) {
-    const robogersThought = robogersConsiders(currentNumber)
-    countedNumbers.push(robogersThought)
+    const robogersInterpretation = robogersConsiders(currentNumber)
+    countedNumbers.push(robogersInterpretation)
   }
   return countedNumbers
 }

@@ -11712,8 +11712,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "robogerConsiders": () => (/* binding */ robogerConsiders),
-/* harmony export */   "robogerCountsTo": () => (/* binding */ robogerCountsTo)
+/* harmony export */   "robogersConsiders": () => (/* binding */ robogersConsiders),
+/* harmony export */   "robogersCountsTo": () => (/* binding */ robogersCountsTo)
 /* harmony export */ });
 /* eslint no-restricted-syntax: 0 */
 
@@ -11723,20 +11723,24 @@ const ROBOGERS_WEIRD_IDEAS = [
   { digit: 1, specialPronunciation: `Beep!` },
 ]
 
-function robogerConsiders(number) {
+function robogersConsiders(number) {
+  let robogersInterpretation = number
   for(const { digit, specialPronunciation } of ROBOGERS_WEIRD_IDEAS) {
     const digitRegExp = new RegExp(digit)
     const numberContainsDigit = digitRegExp.test(String(number))
-    if(numberContainsDigit) return specialPronunciation
+    if(numberContainsDigit) {
+      robogersInterpretation = specialPronunciation
+      break
+    }
   }
-  return number
+  return robogersInterpretation
 }
 
-function robogerCountsTo(finalNumber) {
+function robogersCountsTo(finalNumber) {
   const countedNumbers = []
   for(let currentNumber = 0; currentNumber <= finalNumber; currentNumber++) {
-    const robogersThought = robogerConsiders(currentNumber)
-    countedNumbers.push(robogersThought)
+    const robogersInterpretation = robogersConsiders(currentNumber)
+    countedNumbers.push(robogersInterpretation)
   }
   return countedNumbers
 }
@@ -11837,7 +11841,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(() => {
   jquery__WEBPACK_IMPORTED_MODULE_2___default()(`form`).on(`submit`, e => {
     e.preventDefault()
     const numberToCount = jquery__WEBPACK_IMPORTED_MODULE_2___default()(`#how-high`).val()
-    const countedNumbers = (0,_core__WEBPACK_IMPORTED_MODULE_3__.robogerCountsTo)(numberToCount)
+    const countedNumbers = (0,_core__WEBPACK_IMPORTED_MODULE_3__.robogersCountsTo)(numberToCount)
     const $main = jquery__WEBPACK_IMPORTED_MODULE_2___default()(`main`)
     const $outputList = jquery__WEBPACK_IMPORTED_MODULE_2___default()(`<ol/>`).attr(`start`, 0)
     $main.empty()
