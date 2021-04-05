@@ -4,13 +4,13 @@ import '../styles/font-face.scss'
 // UI
 import $ from 'jquery'
 // LOGIC
-import { robogerCountsTo } from './core'
+import { robogersCountsTo } from './core'
 
 $(() => {
   $(`form`).on(`submit`, e => {
     e.preventDefault()
     const numberToCount = $(`#how-high`).val()
-    const countedNumbers = robogerCountsTo(numberToCount)
+    const countedNumbers = robogersCountsTo(numberToCount)
     const $main = $(`main`)
     const $outputList = $(`<ol/>`).attr(`start`, 0)
     $main.empty()

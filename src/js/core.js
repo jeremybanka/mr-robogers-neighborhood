@@ -6,7 +6,7 @@ const ROBOGERS_WEIRD_IDEAS = [
   { digit: 1, specialPronunciation: `Beep!` },
 ]
 
-export function robogerConsiders(number) {
+export function robogersConsiders(number) {
   for(const { digit, specialPronunciation } of ROBOGERS_WEIRD_IDEAS) {
     const digitRegExp = new RegExp(digit)
     const numberContainsDigit = digitRegExp.test(String(number))
@@ -15,10 +15,10 @@ export function robogerConsiders(number) {
   return number
 }
 
-export function robogerCountsTo(finalNumber) {
+export function robogersCountsTo(finalNumber) {
   const countedNumbers = []
   for(let currentNumber = 0; currentNumber <= finalNumber; currentNumber++) {
-    const robogersThought = robogerConsiders(currentNumber)
+    const robogersThought = robogersConsiders(currentNumber)
     countedNumbers.push(robogersThought)
   }
   return countedNumbers
